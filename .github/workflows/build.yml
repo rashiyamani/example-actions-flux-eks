@@ -46,8 +46,5 @@ jobs:
     - name: Push
       if: github.ref == 'refs/heads/master'
       run: |
-        # Login to AWS ECR
-         aws ecr get-login-password
-      run: |
         # Push image to AWS ECR
-        docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$CONTAINER_IMAGE
+        docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$CONTAINER_IMAGE:latest
